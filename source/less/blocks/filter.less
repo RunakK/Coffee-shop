@@ -1,0 +1,96 @@
+.filter {
+  gap: 34px;
+
+  @media (min-width: @tablet-width) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+  }
+
+  @media (min-width: @desktop-width) {
+    flex-direction: column;
+    width: 318px;
+  }
+}
+
+.filter__item-title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.filter__item-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.filter__item {
+  margin: 0;
+  padding: 0;
+  border: none;
+
+  @media (min-width: @tablet-width) {
+    width: 222px;
+  }
+}
+
+.filter__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @media (min-width: @tablet-width) {
+    flex-direction: row;
+  }
+}
+
+.filter__button {
+  display: block;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  line-height: 24px;
+
+  &:focus,
+  &:hover {
+    background-color: @primary-lighter;
+    color: @base-color;
+  }
+
+  &:active {
+    background-color: @primary-darker;
+    color: @base-color;
+  }
+}
+
+.filter__button--submit {
+  background-color: @base-primary-color;
+  color: @base-color;
+
+  &:disabled {
+    background-color: @base-color-2;
+  }
+}
+
+.filter__button--reset {
+  background-color: @base-color;
+  color: @base-primary-color;
+
+  &:disabled {
+    background-color: @primary-light;
+    color: @base-color;
+  }
+}
+
+.filter__milk-label {
+  padding-left: 34px;
+}
+
+.filter__country-label {
+  padding-left: 52px;
+}

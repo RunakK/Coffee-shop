@@ -1,5 +1,150 @@
-.header {
-  background-color: #663399;
-  color: #ffffff;
-  padding: 10px 15px;
+
+.header__menu {
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+
+  @media (min-width: @tablet-width) {
+    justify-content: space-between;
+  }
+}
+
+.header__nav-list {
+  position: absolute;
+  list-style: none;
+  margin: 0;
+  left: 0;
+  top: 66px;
+  width: 100%;
+  padding: 0;
+  display: none;
+  flex-direction: column;
+  align-items: stretch;
+  background-color: #ffffff;
+
+  @media (min-width: @tablet-width) {
+    position: relative;
+    flex-direction: row;
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    top: 0;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 460px;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+.header__nav-item {
+  text-align: center;
+  position: relative;
+  border-bottom: 1px solid #e6e6e6;
+
+  @media (min-width: @tablet-width) {
+    border-bottom: none;
+  }
+}
+
+.header__nav-link {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  color: @base-color-3;
+  padding: 20px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+
+  &:hover,
+  &:focus {
+    color: @base-primary-color;
+  }
+
+  &:active {
+    background-color: @base-secondary-color;
+  }
+
+  @media (min-width: @tablet-width) {
+    padding: 32px 20px;
+  }
+}
+
+.header__nav-link--selected {
+  @media (min-width: @tablet-width) {
+    color: @base-primary-color;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: @base-primary-color;
+      bottom: 0;
+      left: 0;
+    }
+  }
+}
+
+.header__site-list {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  @media (min-width: @tablet-width) {
+    order: 1;
+  }
+}
+
+.header__toggle-menu {
+  @media (min-width: @tablet-width) {
+    display: none;
+  }
+}
+
+.header__site-text {
+  display: none;
+
+  @media (min-width: @desktop-width) {
+    display: block;
+  }
+}
+
+.header__site-link {
+  display: block;
+  padding: 32px 20px 32px 44px;
+  text-decoration: none;
+  color: @base-color-3;
+
+  &:hover,
+  &:focus {
+    color: @base-primary-color;
+  }
+
+  &:active {
+    background-color: @base-secondary-color;
+    color: @base-primary-color;
+  }
+}
+
+.header__logo {
+  display: flex;
+  text-decoration: none;
+}
+
+.header__logo-text {
+  display: none;
+  width: 126px;
+  font-size: 12px;
+  line-height: 16px;
+  color: @base-color-3;
+
+  @media (min-width: @desktop-width) {
+    display: block;
+  }
 }
