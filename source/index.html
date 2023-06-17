@@ -15,67 +15,45 @@
     <div class="page-wrapper">
       <div class="header__menu">
         <a href="#" class="header__logo">
-          <img src="#" alt="Логотип кофейных">
+          <picture>
+            <source media="(min-width: 1440px)" srcset="img/logo-big.svg">
+            <source media="(min-width: 768px)" srcset="img/logo-medium.svg">
+            <img class="header__logo-image" src="img/logo-small.svg" alt="Логотип кофейных">
+          </picture>
           <span class="header__logo-text">Интернет-магазин кофейных напитков</span>
         </a>
         <ul class="header__site-list">
-          <li class="header__lite-item"><a href="#" class="header__site-link"><span class="header__site-text">войти</span></a></li>
-          <li class="header__lite-item"><a href="#" class="header__site-link"><span class="header__site-text">корзина</span></a></li>
+          <li class="header__lite-item">
+            <a href="#" class="header__site-link">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <use href="./img/icons/stack.svg#basket-icon" />
+              </svg>
+              <span class="header__site-text">войти</span>
+            </a>
+          </li>
+          <li class="header__lite-item">
+            <a href="#" class="header__site-link">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <use href="./img/icons/stack.svg#user-icon" />
+              </svg>
+              <span class="header__site-text">корзина</span>
+            </a>
+          </li>
         </ul>
-        <nav class="header__nav">
+        <nav class="header__nav header__nav--closed">
           <ul class="header__nav-list">
             <li class="header__nav-item"><a href="#" class="header__nav-link header__nav-link--selected">Главная</a></li>
             <li class="header__nav-item"><a href="#" class="header__nav-link">Каталог</a></li>
             <li class="header__nav-item"><a href="#" class="header__nav-link">Доставка</a></li>
             <li class="header__nav-item"><a href="#" class="header__nav-link">О нас</a></li>
           </ul>
-          <button class="header__toggle-menu">Кнопка</button>
-        </nav>
-      </div>
-    </div>
-  </header>
-
-  <!-- <header class="main-header">
-    <div class="main-header__wrapper">
-      <div class="main-header__menu center-container main-header__menu--nojs">
-        <a class="main-header__logo-cat" href="index.html">
-          <picture>
-            <source media="(min-width: 1440px)" srcset="img/logo-desktop.svg">
-            <source media="(min-width: 768px)" srcset="img/logo-tablet.svg">
-            <img class="main-header__logo-mobile" src="img/logo-mobile.svg" width="33" height="37" alt="Логотип кота.">
-          </picture>
-        </a>
-
-        <a class="main-header__logo-text" href="index.html">
-          <img src="./img/logo-cat-energy.png" width="101" height="18" alt="Cat-energy.">
-        </a>
-
-        <nav class="main-nav main-nav--closed">
-          <ul class="main-nav__list main-nav__list--second-color">
-            <li class="main-nav__item">
-              <a class="main-nav__link main-nav__link--current ">Главная</a>
-            </li>
-            <li class="main-nav__item">
-              <a class="main-nav__link " href="catalog.html">Каталог продукции</a>
-            </li>
-            <li class="main-nav__item">
-              <a class="main-nav__link" href="form.html">Подбор программы</a>
-            </li>
-          </ul>
-          <button class="main-header__toggle" type="button">
+          <button class="header__toggle-menu">
             <span class="visually-hidden">Открыть меню навигации.</span>
           </button>
         </nav>
       </div>
-    </div> -->
-
-
-
-
-
-
-
-
+    </div>
+  </header>
 
   <main class="page-main">
     <section class="promo">
@@ -99,19 +77,19 @@
         <h2 class="features__title">Преимущества</h2>
         <p class="features__description">Главные причины выбрать Drink2Go</p>
         <ul class="features__list">
-          <li class="features__item">
+          <li class="features__item features__item--speed">
             <h3 class="features__item-title">Скорость</h3>
             <p class="features__item-description">Готовый напиток всегда под рукой — просто открой банку</p>
           </li>
-          <li class="features__item">
+          <li class="features__item features__item--comfort">
             <h3 class="features__item-title">Удобство</h3>
             <p class="features__item-description">Легко помещается и в карман, и в маленькую сумочку</p>
           </li>
-          <li class="features__item">
+          <li class="features__item features__item--cheerfulness">
             <h3 class="features__item-title">Бодрость</h3>
             <p class="features__item-description">Сбалансированная доза кофеина даст мощный заряд энергии</p>
           </li>
-          <li class="features__item">
+          <li class="features__item features__item--eco-friendly">
             <h3 class="features__item-title">Экологичность</h3>
             <p class="features__item-description">Вся упаковка сделана из перерабатываемых материалов</p>
           </li>
@@ -140,19 +118,31 @@
               <ul class="filter__item-list">
                 <li class="filter__milk-item">
                   <input class="filter__milk-input visually-hidden" type="radio" name="milk-availability" value="неважно" id="no-matter" checked>
-                  <label class="filter__milk-label" for="no-matter">Неважно</label>
+                  <label class="filter__milk-label" for="no-matter">
+                    <span class="filter__milk-control"></span>
+                    Неважно
+                  </label>
                 </li>
                 <li class="filter__milk-item">
                   <input class="filter__milk-input visually-hidden" type="radio" name="milk-availability" value="только животное" id="animal">
-                  <label class="filter__milk-label" for="animal" class="filter__milk-label">Только животное</label>
+                  <label class="filter__milk-label" for="animal">
+                    <span class="filter__milk-control"></span>
+                    Только животное
+                  </label>
                 </li>
                 <li class="filter__milk-item">
                   <input class="filter__milk-input visually-hidden" type="radio" name="milk-availability" value="только растительное" id="vegetable">
-                  <label class="filter__milk-label" for="vegetable">Только растительное</label>
+                  <label class="filter__milk-label" for="vegetable">
+                    <span class="filter__milk-control"></span>
+                    Только растительное
+                  </label>
                 </li>
                 <li class="filter__milk-item">
-                  <input class="filter__milk-input visually-hidden" type="radio" name="milk-availability" value="без молока" id="without">
-                  <label class="filter__milk-label" for="without">Без молока</label>
+                  <input class="filter__milk-input visually-hidden" type="radio" name="milk-availability" value="без молока" id="without" disabled>
+                  <label class="filter__milk-label" for="without">
+                    <span class="filter__milk-control"></span>
+                    Без молока
+                  </label>
                 </li>
               </ul>
             </fieldset>
@@ -161,7 +151,7 @@
               <legend class="filter__item-title">Страна произрастания</legend>
               <ul class="filter__item-list">
                 <li class="filter__country-item">
-                  <input class="filter__country-input visually-hidden" type="checkbox" name="brasil" id="brasil">
+                  <input class="filter__country-input visually-hidden" type="checkbox" name="brasil" id="brasil" checked>
                   <label for="brasil" class="filter__country-label">Бразилия<span class="filter__country-control"></span></label>
                 </li>
                 <li class="filter__country-item">
@@ -177,7 +167,7 @@
                   <label for="costa-rica" class="filter__country-label">Коста-Рика<span class="filter__country-control"></span></label>
                 </li>
                 <li class="filter__country-item">
-                  <input class="filter__country-input visually-hidden" type="checkbox" name="peru" id="peru">
+                  <input class="filter__country-input visually-hidden" type="checkbox" name="peru" id="peru" disabled>
                   <label for="peru" class="filter__country-label">Перу<span class="filter__country-control"></span></label>
                 </li>
               </ul>
@@ -237,21 +227,22 @@
                 <div class="cards__price-wrapper"><span class="cards__item-price">225₽</span><a href="#" class="cards__item-button">В корзину</a></div>
               </li>
             </ul>
+            <ul class="catalog__pagination">
+              <li class="catalog__pagination-item"><a href="#" class="catalog__pagination-link catalog__pagination-link--back">
+                  <span class="catalog__pagination-first">Назад</span></a>
+              </li>
+              <li class="catalog__pagination-item"><a href="#" class="catalog__pagination-link">1</a>
+              </li>
+              <li class="catalog__pagination-item"><a href="#" class="catalog__pagination-link catalog__pagination-link--current">2</a>
+              </li>
+              <li class="catalog__pagination-item"><a href="#" class="catalog__pagination-link">3</a>
+              </li>
+              <li class="catalog__pagination-item"><a href="#" class="catalog__pagination-link">
+                  <span class="catalog__pagination-last">Вперёд</span></a>
+              </li>
+            </ul>
           </section>
-          <ul class="catalog__pagination">
-            <li class="catalog__pagination-item"><a href="#" class="catalog__pagination-link catalog__pagination-link--back">
-                <span class="catalog__pagination-first">Назад</span></a>
-            </li>
-            <li class="catalog__pagination-item"><a href="#" class="catalog__pagination-link">1</a>
-            </li>
-            <li class="catalog__pagination-item"><a href="#" class="catalog__pagination-link catalog__pagination-link--current">2</a>
-            </li>
-            <li class="catalog__pagination-item"><a href="#" class="catalog__pagination-link">3</a>
-            </li>
-            <li class="catalog__pagination-item"><a href="#" class="catalog__pagination-link">
-                <span class="catalog__pagination-last">Вперёд</span></a>
-            </li>
-          </ul>
+
         </div>
       </div>
     </section>
@@ -265,48 +256,48 @@
   </main>
   <footer class="footer">
     <div class="page-wrapper">
-      <div class="footer__contacts">
-        <a href="" class="footer__logo"></a><span class="footer__social-text">Интернет-магазин кофейных напитков</span>
-        <ul class="footer__social-list">
-          <li class="footer__social-item"><a href="#" class="footer__social-link"><span class="visually-hidden">Мы вконтакте</span></a></li>
-          <li class="footer__social-item"><a href="#" class="footer__social-link"><span class="visually-hidden">Пинтерест</span></a></li>
-          <li class="footer__social-item"><a href="#" class="footer__social-link"><span class="visually-hidden">Одноклассники</span></a></li>
-        </ul>
-      </div>
-    </div>
 
-    <div class="footer__block-group">
-      <div class="footer__block-item">
-        <h2 class="footer__item-title">Интернет-магазин</h2>
-        <ul class="footer__item-list">
-          <li class="footer__item"><a href="#" class="footer__item-link">Каталог</a></li>
-          <li class="footer__item"><a href="#" class="footer__item-link">Доставка</a></li>
-          <li class="footer__item"><a href="#" class="footer__item-link">Способы оплаты</a></li>
-          <li class="footer__item"><a href="#" class="footer__item-link">О нас</a></li>
-        </ul>
-      </div>
-      <div class="footer__block-item">
-        <h2 class="footer__item-title">Медиа</h2>
-        <ul class="footer__item-list">
-          <li class="footer__item"><a href="#" class="footer__item-link">блог</a></li>
-          <li class="footer__item"><a href="#" class="footer__item-link">Информация для СМИ</a></li>
-          <li class="footer__item"><a href="#" class="footer__item-link">Правовая информация</a></li>
-        </ul>
-      </div>
-      <div class="footer__block-item">
-        <h2 class="footer__item-title">контакты</h2>
-        <ul class="footer__item-list">
-          <li class="footer__item"><a href="" class="footer__item-link">Санкт-Петербург, набережная реки Карповки, дом 5</a></li>
-          <li class="footer__item"><a href="tel:+7999999-99-99" class="footer__item-link">+7 (999) 999-99-99</a></li>
-        </ul>
-      </div>
+      <div class="footer__block-group">
+        <div class="footer__contacts">
+          <a href="" class="footer__logo"></a><span class="footer__social-text">Интернет-магазин кофейных напитков</span>
+          <ul class="footer__social-list">
+            <li class="footer__social-item"><a href="#" class="footer__social-link"><span class="visually-hidden">Мы вконтакте</span></a></li>
+            <li class="footer__social-item"><a href="#" class="footer__social-link"><span class="visually-hidden">Пинтерест</span></a></li>
+            <li class="footer__social-item"><a href="#" class="footer__social-link"><span class="visually-hidden">Одноклассники</span></a></li>
+          </ul>
+        </div>
+        <div class="footer__block-item">
+          <h2 class="footer__item-title">Интернет-магазин</h2>
+          <ul class="footer__item-list">
+            <li class="footer__item"><a href="#" class="footer__item-link">Каталог</a></li>
+            <li class="footer__item"><a href="#" class="footer__item-link">Доставка</a></li>
+            <li class="footer__item"><a href="#" class="footer__item-link">Способы оплаты</a></li>
+            <li class="footer__item"><a href="#" class="footer__item-link">О нас</a></li>
+          </ul>
+        </div>
+        <div class="footer__block-item">
+          <h2 class="footer__item-title">Медиа</h2>
+          <ul class="footer__item-list">
+            <li class="footer__item"><a href="#" class="footer__item-link">блог</a></li>
+            <li class="footer__item"><a href="#" class="footer__item-link">Информация для СМИ</a></li>
+            <li class="footer__item"><a href="#" class="footer__item-link">Правовая информация</a></li>
+          </ul>
+        </div>
+        <div class="footer__block-item">
+          <h2 class="footer__item-title">Контакты</h2>
+          <ul class="footer__item-list">
+            <li class="footer__item"><a href="" class="footer__item-link">Санкт-Петербург, набережная реки Карповки, дом 5</a></li>
+            <li class="footer__item"><a href="tel:+7999999-99-99" class="footer__item-link">+7 (999) 999-99-99</a></li>
+          </ul>
+        </div>
 
-      <div class="footer__copyrght-wrapper">
-        <span class="footer__copyright-text">Разработано в</span>
-        <a href="#" class="footer__copyright-academy">
-          HTML Academy
-          <img class="footer__copyright-logo" src="#" alt="Логотип">
-        </a>
+        <div class="footer__copyrght-wrapper">
+          <span class="footer__copyright-text">Разработано в</span>
+          <a href="#" class="footer__copyright-academy">
+            HTML Academy
+            <img class="footer__copyright-logo" src="#" alt="Логотип">
+          </a>
+        </div>
       </div>
     </div>
   </footer>

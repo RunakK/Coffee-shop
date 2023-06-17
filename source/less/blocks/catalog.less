@@ -3,6 +3,9 @@
 }
 
 .catalog__wrapper {
+  display: grid;
+  row-gap: 40px;
+
   @media (min-width: @desktop-width) {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -39,6 +42,14 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+
+  @media (min-width: @tablet-width) {
+    justify-content: flex-end;
+  }
+
+  @media (min-width: @desktop-width) {
+    grid-column: 2;
+  }
 }
 
 .catalog__pagination-link {
@@ -102,4 +113,3 @@
   line-height: 24px;
   color: @base-color-3;
 }
-

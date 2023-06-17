@@ -24,11 +24,15 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
 
   @media (min-width: @tablet-width) {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
+    row-gap: 50px;
   }
 }
 
@@ -38,11 +42,30 @@
   align-items: center;
   flex-wrap: wrap;
   box-sizing: border-box;
+  padding-top: 66px;
+  position: relative;
+  gap: 4px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 52px;
+    height: 56px;
+    background: no-repeat center url("../../img/clock.svg");
+    background-size: contain;
+  }
 
   @media (min-width: @tablet-width) {
     align-items: flex-start;
     width: 339px;
     padding-left: 72px;
+    padding-top: 0;
+    gap: 10px;
+
+    &::before {
+      left: 0;
+    }
   }
 
   @media (min-width: @desktop-width) {
@@ -50,6 +73,29 @@
     width: 317px;
     padding-left: 0;
     padding-top: 76px;
+
+    &::before {
+      right: 0;
+      margin: auto;
+    }
+  }
+}
+
+.features__item--comfort {
+  &::before {
+    background-image: url("../../img/friendship.svg");
+  }
+}
+
+.features__item--cheerfulness {
+  &::before {
+    background-image: url("../../img/lighting.svg");
+  }
+}
+
+.features__item--eco-friendly {
+  &::before {
+    background-image: url("../../img/leaf.svg");
   }
 }
 
@@ -58,6 +104,7 @@
   font-size: 18px;
   line-height: 32px;
   text-transform: capitalize;
+  margin: 0;
 
   @media (min-width: @tablet-width) {
     font-size: 24px;
@@ -67,6 +114,7 @@
 
 .features__item-description {
   text-align: center;
+  margin: 0;
 
   @media (min-width: @tablet-width) {
     font-size: 16px;
