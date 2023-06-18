@@ -27,6 +27,7 @@
   flex-direction: column;
   row-gap: 20px;
   flex-wrap: wrap;
+  margin-bottom: 40px;
 
   @media (min-width: @tablet-width) {
     flex-direction: row;
@@ -46,6 +47,10 @@
 
   @media (min-width: @desktop-width) {
     width: 317px;
+
+    &:nth-child(2) {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    }
   }
 }
 
@@ -73,6 +78,7 @@
   padding: 8px 20px 8px 46px;
   background-color: @base-primary-color;
   border-radius: 4px;
+  position: relative;
 
   &:hover,
   &:focus {
@@ -86,9 +92,26 @@
   &:disabled {
     background-color: @base-color-2;
   }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    height: 16px;
+    background: url("../../img/catalog-basket.svg") no-repeat center;
+  }
 }
 
 .cards__price-wrapper {
   display: flex;
   justify-content: space-between;
+}
+
+.cards__image {
+  display: block;
+  margin: 0 auto;
 }

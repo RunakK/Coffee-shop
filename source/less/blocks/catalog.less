@@ -1,5 +1,7 @@
 .catalog {
   background-color: @background-base;
+  padding-top: 50px;
+  padding-bottom: 44px;
 }
 
 .catalog__wrapper {
@@ -61,6 +63,23 @@
   line-height: 24px;
   text-align: center;
   background-color: @base-color;
+  border-radius: 4px;
+
+  &:hover,
+  &:focus {
+    background-color: @primary-lighter;
+    color: @base-color;
+  }
+
+  &:active {
+    background-color: @primary-darker;
+    color: @base-color;
+  }
+
+  &:disabled {
+    background-color: @primary-light;
+    color: @base-color;
+  }
 }
 
 .catalog__pagination-item {
