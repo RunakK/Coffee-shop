@@ -5,6 +5,9 @@
   <meta charset="UTF-8">
   <title>Интернет-магазин кофейных напитков</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="./vendor/nouislider.css">
+  <link rel="stylesheet" href="./vendor/leaflet.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="preload" href="./fonts/Montserrat-Bold.woff2" type="font/woff2" as="font" crossorigin="anonymous">
   <link rel="preload" href="./fonts/Montserrat-Regular.woff2" type="font/woff2" as="font" crossorigin="anonymous">
@@ -58,14 +61,23 @@
   <main class="page-main">
     <section class="promo">
       <h2 class="visually-hidden">примеры товаров</h2>
-      <div class="page-wrapper">
-        <div class="swiper">
-          <!-- Additional required wrapper -->
-          <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="swiper-slide">
-              <div class="promo__slider">
-                <img class="promo__slider-image" src="#" alt="Белая алюминиевая банка с кофе">
+      <!-- <div class="page-wrapper"> -->
+      <div class="swiper">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper">
+          <!-- Slides -->
+          <div class="swiper-slide">
+            <div class="promo__slider promo-slider--flat">
+              <picture class="promo__picture">
+                <source type="image/webp" media="(min-width: 1440px)" srcset="img/slider-image/flat_white_desktop@1x.webp 1x, img/slider-image/flat_white_desktop@2x.webp 2x">
+                <source type="image/webp" media="(min-width: 768px)" srcset="img/slider-image/flat_white_tablet@1x.webp 1x, img/slider-image/flat_white_tablet@2x.webp 2x">
+                <source type="image/webp" srcset="img/slider-image/flat_white_mobile@1x.webp 1x, img/slider-image/flat_white_mobile@2x.webp 2x">
+                <source media="(min-width: 1440px)" srcset="img/slider-image/flat_white_desktop@1x.png 1x, img/slider-image/flat_white_desktop@2x.png 2x">
+                <source media="(min-width: 768px)" srcset="img/slider-image/flat_white_tablet@1x.png 1x, img/slider-image/flat_white_tablet@2x.png 2x">
+                <img class="promo__slider-image" src="./img/slider-image/flat_white_mobile@1x.png" srcset="./img/slider-image/flat_white_mobile@2x.png 2x" width="280" height="280" alt="белая алюминиевая банка.">
+              </picture>
+              <div class="promo__text-wrapper">
+                <span class="promo__badge">новинка</span>
                 <h2 class="promo__slider-title">Декаф Флэт Уайт</h2>
                 <p class="promo__slider-description">Свежесваренный кофе без кофеина из Эфиопии с натуральным фермерским молоком — то, что нужно для расслабления после тяжёлого рабочего дня</p>
                 <div class="promo__price-container">
@@ -75,39 +87,60 @@
                 </div>
               </div>
             </div>
-            <div class="swiper-slide"><div class="promo__slider">
-              <img class="promo__slider-image" src="#" alt="Белая алюминиевая банка с кофе">
-              <h2 class="promo__slider-title">Декаф Флэт Уайт</h2>
-              <p class="promo__slider-description">Свежесваренный кофе без кофеина из Эфиопии с натуральным фермерским молоком — то, что нужно для расслабления после тяжёлого рабочего дня</p>
-              <div class="promo__price-container">
-                <span class="promo__old-price">295P</span>
-                <span class="promo__new-price">225P</span>
-                <a href="" class="promo__buy">заказать</a>
-              </div>
-            </div></div>
-            <div class="swiper-slide"><div class="promo__slider">
-              <img class="promo__slider-image" src="#" alt="Белая алюминиевая банка с кофе">
-              <h2 class="promo__slider-title">Декаф Флэт Уайт</h2>
-              <p class="promo__slider-description">Свежесваренный кофе без кофеина из Эфиопии с натуральным фермерским молоком — то, что нужно для расслабления после тяжёлого рабочего дня</p>
-              <div class="promo__price-container">
-                <span class="promo__old-price">295P</span>
-                <span class="promo__new-price">225P</span>
-                <a href="" class="promo__buy">заказать</a>
-              </div>
-            </div></div>
-            ...
           </div>
-          <!-- If we need pagination -->
-          <div class="swiper-pagination"></div>
-
-          <!-- If we need navigation buttons -->
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
-
-          <!-- If we need scrollbar -->
-          <div class="swiper-scrollbar"></div>
+          <div class="swiper-slide">
+            <div class="promo__slider promo-slider--latte">
+              <picture class="promo__picture">
+                <source type="image/webp" media="(min-width: 1440px)" srcset="img/slider-image/lavender_desktop@1x.webp 1x, img/slider-image/lavender_desktop@2x.webp 2x">
+                <source type="image/webp" media="(min-width: 768px)" srcset="img/slider-image/lavender_tablet@1x.webp 1x, img/slider-image/lavender_tablet@2x.webp 2x">
+                <source type="image/webp" srcset="img/slider-image/lavender_mobile@1x.webp 1x, img/slider-image/lavender_mobile@2x.webp 2x">
+                <source media="(min-width: 1440px)" srcset="img/slider-image/lavender_desktop@1x.png 1x, img/slider-image/lavender_desktop@2x.png 2x">
+                <source media="(min-width: 768px)" srcset="img/slider-image/lavender_tablet@1x.png 1x, img/slider-image/lavender_tablet@2x.png 2x">
+                <img class="promo__slider-image" src="./img/slider-image/lavender_mobile@1x.png" srcset="./img/slider-image/lavender_mobile@2x.png 2x" width="280" height="280" alt="белая алюминиевая банка.">
+              </picture>
+              <div class="promo__text-wrapper">
+                <span class="promo__badge">новинка</span>
+                <h2 class="promo__slider-title">Лавандовый Латте</h2>
+                <p class="promo__slider-description">Невероятное сочетание перуанской высокогорной арабики с молоком ламы и лавандовым сиропом унесёт вас прямо на вершину Радужных гор</p>
+                <div class="promo__price-container">
+                  <span class="promo__old-price">285P</span>
+                  <span class="promo__new-price">265P</span>
+                  <a href="" class="promo__buy">заказать</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="promo__slider promo__slider--espresso">
+              <picture class="promo__picture">
+                <source type="image/webp" media="(min-width: 1440px)" srcset="img/slider-image/espresso_desktop@1x.webp 1x, img/slider-image/espresso_desktop@2x.webp 2x">
+                <source type="image/webp" media="(min-width: 768px)" srcset="img/slider-image/espresso_tablet@1x.webp 1x, img/slider-image/espresso_tablet@2x.webp 2x">
+                <source type="image/webp" srcset="img/slider-image/espresso_mobile@1x.webp 1x, img/slider-image/espresso_mobile@2x.webp 2x">
+                <source media="(min-width: 1440px)" srcset="img/slider-image/espresso_desktop@1x.png 1x, img/slider-image/espresso_desktop@2x.png 2x">
+                <source media="(min-width: 768px)" srcset="img/slider-image/espresso_tablet@1x.png 1x, img/slider-image/espresso_tablet@2x.png 2x">
+                <img class="promo__slider-image" src="./img/slider-image/espresso_mobile@1x.png" srcset="./img/slider-image/espresso_mobile@2x.png 2x" width="280" height="280" alt="белая алюминиевая банка.">
+              </picture>
+              <div class="promo__text-wrapper">
+                <span class="promo__badge">новинка</span>
+                <h2 class="promo__slider-title">Тройной Эспрессо</h2>
+                <p class="promo__slider-description">Мощнее укола адреналина, чернее самой тёмной ночи, этот тройной эспрессо из Колумбии покажет вам, что такое настоящая бодрость</p>
+                <div class="promo__price-container">
+                  <span class="promo__old-price">295P</span>
+                  <span class="promo__new-price">225P</span>
+                  <a href="" class="promo__buy">заказать</a>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+        <!-- If we need navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
       </div>
+      <!-- </div> -->
     </section>
 
     <section class="features">
@@ -142,12 +175,12 @@
         <div class="catalog__wrapper">
           <form class="catalog__filter filter">
 
-            <div class="filter__item filter__price-wrapper">
+            <div class="filter__item">
               <h2 class="filter__item-title">Цена</h2>
-              <div class="filter__price">noUiSlider</div>
+              <div class="filter__price" id="slider"></div>
               <div class="filter__price-wrapper">
-                <label class="filter__price-label" for="price-min"></label><input type="text" class="filter__price-value" id="price-min" name="price-min">
-                <label class="filter__price-label" for="price-max"></label><input type="text" class="filter__price-value" id="price-max" name="price-max">
+                <label class="filter__price-label" for="price-min"> <input type="number" class="filter__price-value" min="1" max="1000" id="price-min" name="price-min" placeholder="0"></label>
+                <label class="filter__price-label" for="price-max"><input type="number" class="filter__price-value" min="1" max="1000" id="price-max" name="price-max" placeholder="900"></label>
               </div>
             </div>
 
@@ -305,8 +338,10 @@
 
     <section class="map">
       <h2 class="visually-hidden">Карта</h2>
-      <div class="page-wrapper">
-        <img src="#" alt="карта" class="map__image">
+      <div class="map__wrapper">
+        <div class="map__image" id="map">
+
+        </div>
       </div>
     </section>
   </main>
@@ -375,7 +410,7 @@
 
         <div class="footer__copyrght-wrapper">
           <span class="footer__copyright-text">Разработано в</span>
-          <a href="#" class="footer__copyright-academy">
+          <a href="https://htmlacademy.ru/intensive/adaptive" class="footer__copyright-academy">
             HTML Academy
             <svg class="footer__copyright-logo" width="12" height="16" viewBox="0 0 12 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <use href="./img/icons/stack.svg#html-logo" />
@@ -386,6 +421,9 @@
     </div>
   </footer>
 
+  <script src="./vendor/nouislider.js"></script>
+  <script src="./vendor/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
   <script src="./js/script.js" defer></script>
 </body>
 

@@ -224,3 +224,47 @@
     background-color: @base-color-2;
   }
 }
+
+.filter__price-wrapper {
+  width: 280px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 2px;
+    background-color: @base-color-2;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+  }
+
+  @media (min-width: @tablet-width) {
+    width: 223px;
+    column-gap: 48px;
+  }
+}
+
+.filter__price-value {
+  font-family: "Montserrat", "Arial", sans-serif;
+  display: block;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 9px 10px;
+  box-sizing: border-box;
+  width: 100%;
+  border: 2px solid @primary-lighter;
+  border-radius: 4px;
+  height: 40px;
+}
+
+.filter__price {
+  margin-bottom: 24px;
+}
