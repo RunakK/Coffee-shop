@@ -1,7 +1,9 @@
 .filter {
   display: flex;
   flex-direction: column;
-  gap: 34px;
+  gap: 30px;
+  flex-wrap: wrap;
+  width: 280px;
 
   @media (min-width: @tablet-width) {
     display: flex;
@@ -9,11 +11,14 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
+    width: 100%;
   }
 
   @media (min-width: @desktop-width) {
     flex-direction: column;
     width: 318px;
+    justify-content: flex-start;
+    padding-top: 5px;
   }
 }
 
@@ -21,6 +26,9 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
 }
 
 .filter__item-list {
@@ -43,6 +51,10 @@
   @media (min-width: @tablet-width) {
     width: 222px;
   }
+
+  @media (min-width: @desktop-width) {
+    width: 100%;
+  }
 }
 
 .filter__buttons {
@@ -52,6 +64,14 @@
 
   @media (min-width: @tablet-width) {
     flex-direction: row;
+    margin-top: 9px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-top: 6px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
   }
 }
 
@@ -62,6 +82,7 @@
   border-radius: 4px;
   font-size: 16px;
   line-height: 24px;
+  letter-spacing: 0.09em;
 
   &:focus,
   &:hover {
@@ -72,6 +93,11 @@
   &:active {
     background-color: @primary-darker;
     color: @base-color;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding: 8px 26px;
+    max-width: 147px;
   }
 }
 
@@ -94,20 +120,28 @@
   }
 }
 
+.filter__milk {
+  margin-bottom: 4px;
+}
+
 .filter__milk-label {
   padding-left: 34px;
   position: relative;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .filter__country-label {
   padding-left: 52px;
   position: relative;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .filter__milk-control {
   position: absolute;
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   border: 2px solid @base-color-2;
   left: 0;
@@ -231,6 +265,7 @@
   grid-template-columns: 1fr 1fr;
   justify-content: center;
   position: relative;
+  gap: 42px;
 
   &::before {
     content: "";
@@ -249,6 +284,10 @@
     width: 223px;
     column-gap: 48px;
   }
+
+  @media (min-width: @desktop-width) {
+    width: 318px;
+  }
 }
 
 .filter__price-value {
@@ -263,8 +302,28 @@
   border: 2px solid @primary-lighter;
   border-radius: 4px;
   height: 40px;
+  text-align: center;
+
+  &:active {
+    color: #333333;
+  }
+
+  &:focus {
+    border-color: #593cac;
+    color: #333333;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    border: 2px solid #e2e2e2;
+  }
 }
 
 .filter__price {
-  margin-bottom: 24px;
+  margin-top: 31px;
+  margin-bottom: 34px;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 28px;
+  }
 }

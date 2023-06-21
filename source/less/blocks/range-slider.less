@@ -15,6 +15,12 @@
   border-radius: 50%;
 }
 
+.noUi-handle {
+  &::after {
+    display: none;
+  }
+}
+
 .noUi-horizontal .noUi-handle {
   display: block;
   width: 24px;
@@ -26,11 +32,41 @@
   top: 0;
   bottom: 0;
   margin: auto;
-}
 
-.noUi-handle {
-  &::before,
-  &::after {
+  &::before {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: #7859cf;
+    border-radius: 50%;
+    margin: auto;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
     display: none;
+  }
+
+  &:hover,
+  &:focus-visible {
+    &::before {
+      display: block;
+      background: rgba(120, 89, 207, 0.25);
+    }
+  }
+
+  &:active {
+    &::before {
+      display: block;
+      background-color: #7859cf;
+    }
+  }
+
+  &:disabled {
+    &::before {
+      border-color: #bdbdbd;
+      background-color: #f8f8f8;
+    }
   }
 }
