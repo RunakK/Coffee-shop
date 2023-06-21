@@ -1,27 +1,31 @@
 .promo {
-  background-color: @background-primary;
-
-  @media (min-width: @tablet-width) {
-    background: linear-gradient(to bottom, @background-primary 77%, @base-color 23%);
-  }
-
+  display: grid;
+  justify-content: center;
+  position: relative;
 }
 
 .promo__slider {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 60px;
+  padding-top: 20px;
 
   @media (min-width: @tablet-width) {
-    width: 608px;
     margin: 0 auto;
+    padding-top: 60px;
   }
 
   @media (min-width: @desktop-width) {
-    align-items: flex-start;
-    width: 625px;
+    width: auto;
     margin: 0;
     margin-left: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 78px;
+    padding-left: 105px;
+    padding-right: 80px;
+    padding-top: 37px;
   }
 }
 
@@ -31,10 +35,21 @@
   line-height: 48px;
   text-align: center;
   letter-spacing: 0.02em;
+  margin: 0;
+  margin-bottom: 10px;
+  width: 280px;
 
   @media (min-width: @tablet-width) {
     font-size: 56px;
     line-height: 80px;
+    margin-bottom: 16px;
+    width: 608px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 625px;
+    text-align: left;
+    letter-spacing: 0.03em;
   }
 }
 
@@ -42,14 +57,20 @@
   font-size: 14px;
   line-height: 20px;
   text-align: center;
+  margin: 0;
+  margin-bottom: 20px;
+  width: 280px;
 
   @media (min-width: @tablet-width) {
     font-size: 20px;
     line-height: 32px;
+    width: 606px;
   }
 
   @media (min-width: @desktop-width) {
     text-align: left;
+    margin-bottom: 40px;
+    width: 606px;
   }
 }
 
@@ -64,7 +85,11 @@
   font-weight: 600;
   font-size: 20px;
   line-height: 32px;
-  margin-left: 8px;
+  margin-right: 16px;
+
+  @media (min-width: @desktop-width) {
+    margin-right: 20px;
+  }
 }
 
 .promo__buy {
@@ -75,7 +100,6 @@
   font-size: 16px;
   line-height: 24px;
   border-radius: 4px;
-  margin-left: 20px;
   text-transform: capitalize;
 
   &:hover,
@@ -92,3 +116,120 @@
   }
 }
 
+.promo__text-wrapper {
+  display: grid;
+  justify-items: center;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: @desktop-width) {
+    justify-items: start;
+  }
+}
+
+.promo__picture {
+  @media (min-width: @tablet-width) {
+    order: 4;
+  }
+
+  @media (min-width: @desktop-width) {
+    order: -1;
+  }
+}
+
+.promo__slider-image {
+  display: block;
+  object-fit: contain;
+  margin-bottom: 10px;
+
+  @media (min-width: @tablet-width) {
+    width: 476px;
+    bottom: 0;
+    order: 4;
+    margin-bottom: 0;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 600px;
+  }
+}
+
+.promo__badge {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: @base-primary-color;
+  margin-bottom: 4px;
+  max-width: 280px;
+}
+
+.promo__slider--latte {
+  background: @background-primary-2;
+
+  @media (min-width: @tablet-width) {
+    background: linear-gradient(to bottom, @background-primary-2 71%, @base-color 29%);
+  }
+
+  @media (min-width: @desktop-width) {
+    background: @background-primary-2;
+  }
+}
+
+.promo__slider--flat {
+  background: @background-primary;
+
+  @media (min-width: @tablet-width) {
+    background: linear-gradient(to bottom, @background-primary 71%, @base-color 29%);
+  }
+
+  @media (min-width: @desktop-width) {
+    background: @background-primary;
+  }
+}
+
+.promo__slider--espresso {
+  background: @background-primary-3;
+
+  @media (min-width: @tablet-width) {
+    background: linear-gradient(to bottom, @background-primary-3 71%, @base-color 29%);
+  }
+
+  @media (min-width: @desktop-width) {
+    background: @background-primary-3;
+  }
+}
+
+.swiper-pagination {
+  display: none;
+
+  @media (min-width: @desktop-width) {
+    display: block;
+  }
+}
+
+.promo__price-container {
+  width: 280px;
+  box-sizing: border-box;
+  padding: 0 25px;
+  align-items: center;
+  gap: 5px;
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (min-width: @desktop-width) {
+    display: grid;
+    padding: 0;
+    width: auto;
+    grid-template-columns: auto auto auto;
+  }
+}
+
+.promo__break {
+  @media (max-width: @mobile-width-only) {
+    display: none;
+  }
+}

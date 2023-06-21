@@ -1,3 +1,18 @@
+.features {
+  padding-top: 50px;
+  padding-bottom: 60px;
+
+  @media (min-width: @tablet-width) {
+    padding-top: 0;
+    padding-bottom: 100px;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding-top: 100px;
+    padding-bottom: 120px;
+  }
+}
+
 .features__title {
   font-weight: 700;
   font-size: 12px;
@@ -6,6 +21,12 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   color: @base-primary-color;
+  margin-top: 0;
+  margin-bottom: 5px;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 4px;
+  }
 }
 
 .features__description {
@@ -13,10 +34,17 @@
   font-size: 24px;
   line-height: 36px;
   text-align: center;
+  margin: 0;
+  margin-bottom: 35px;
 
   @media (min-width: @tablet-width) {
     font-size: 42px;
     line-height: 64px;
+    margin-bottom: 61px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-bottom: 81px;
   }
 }
 
@@ -24,11 +52,17 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  justify-content: center;
 
   @media (min-width: @tablet-width) {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
+    row-gap: 50px;
+    justify-content: center;
   }
 }
 
@@ -38,11 +72,30 @@
   align-items: center;
   flex-wrap: wrap;
   box-sizing: border-box;
+  padding-top: 66px;
+  position: relative;
+  gap: 4px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 52px;
+    height: 56px;
+    background: no-repeat center url("../../img/clock.svg");
+    background-size: contain;
+  }
 
   @media (min-width: @tablet-width) {
     align-items: flex-start;
     width: 339px;
     padding-left: 72px;
+    padding-top: 0;
+    gap: 10px;
+
+    &::before {
+      left: 0;
+    }
   }
 
   @media (min-width: @desktop-width) {
@@ -50,6 +103,29 @@
     width: 317px;
     padding-left: 0;
     padding-top: 76px;
+
+    &::before {
+      right: 0;
+      margin: auto;
+    }
+  }
+}
+
+.features__item--comfort {
+  &::before {
+    background-image: url("../../img/friendship.svg");
+  }
+}
+
+.features__item--cheerfulness {
+  &::before {
+    background-image: url("../../img/lighting.svg");
+  }
+}
+
+.features__item--eco-friendly {
+  &::before {
+    background-image: url("../../img/leaf.svg");
   }
 }
 
@@ -58,6 +134,7 @@
   font-size: 18px;
   line-height: 32px;
   text-transform: capitalize;
+  margin: 0;
 
   @media (min-width: @tablet-width) {
     font-size: 24px;
@@ -67,6 +144,7 @@
 
 .features__item-description {
   text-align: center;
+  margin: 0;
 
   @media (min-width: @tablet-width) {
     font-size: 16px;

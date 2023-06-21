@@ -1,16 +1,24 @@
 .filter {
-  gap: 34px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  flex-wrap: wrap;
+  width: 280px;
 
   @media (min-width: @tablet-width) {
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
+    width: 100%;
   }
 
   @media (min-width: @desktop-width) {
     flex-direction: column;
     width: 318px;
+    justify-content: flex-start;
+    padding-top: 5px;
   }
 }
 
@@ -18,6 +26,9 @@
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
+  margin: 0;
+  margin-bottom: 20px;
+  padding: 0;
 }
 
 .filter__item-list {
@@ -26,6 +37,10 @@
   list-style: none;
   font-size: 16px;
   line-height: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .filter__item {
@@ -36,6 +51,10 @@
   @media (min-width: @tablet-width) {
     width: 222px;
   }
+
+  @media (min-width: @desktop-width) {
+    width: 100%;
+  }
 }
 
 .filter__buttons {
@@ -45,6 +64,14 @@
 
   @media (min-width: @tablet-width) {
     flex-direction: row;
+    margin-top: 9px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-top: 6px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
   }
 }
 
@@ -55,6 +82,7 @@
   border-radius: 4px;
   font-size: 16px;
   line-height: 24px;
+  letter-spacing: 0.09em;
 
   &:focus,
   &:hover {
@@ -65,6 +93,11 @@
   &:active {
     background-color: @primary-darker;
     color: @base-color;
+  }
+
+  @media (min-width: @desktop-width) {
+    padding: 8px 26px;
+    max-width: 147px;
   }
 }
 
@@ -87,10 +120,210 @@
   }
 }
 
+.filter__milk {
+  margin-bottom: 4px;
+}
+
 .filter__milk-label {
   padding-left: 34px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .filter__country-label {
   padding-left: 52px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filter__milk-control {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid @base-color-2;
+  left: 0;
+  background-color: @base-color;
+}
+
+.filter__milk-input[type="radio"]:checked + .filter__milk-label .filter__milk-control {
+  border-color: @base-primary-color;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: @base-primary-color;
+    border-radius: 50%;
+    margin: auto;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+.filter__milk-input[type="radio"]:hover + .filter__milk-label .filter__milk-control,
+.filter__milk-input[type="radio"]:focus-visible + .filter__milk-label .filter__milk-control {
+  border-color: @primary-lighter;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: rgba(120, 89, 207, 0.25);
+    border-radius: 50%;
+    margin: auto;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+.filter__milk-input[type="radio"]:disabled + .filter__milk-label {
+  color: @primary-light;
+}
+
+.filter__milk-input[type="radio"]:disabled + .filter__milk-label .filter__milk-control {
+  background-color: inherit;
+  border-color: @primary-light;
+
+  &::after {
+    background-color: @base-color-2;
+  }
+}
+
+.filter__country-control {
+  position: absolute;
+  width: 42px;
+  height: 24px;
+  border-radius: 12px;
+  border: 2px solid @base-color-2;
+  left: 0;
+  background-color: @base-color-2;
+  box-sizing: border-box;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: @base-color;
+    left: 0;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+  }
+}
+
+.filter__country-input[type="checkbox"]:checked + .filter__country-label .filter__country-control {
+  background-color: @base-primary-color;
+  border: 2px solid @base-primary-color;
+
+  &::before {
+    left: 50%;
+  }
+}
+
+.filter__country-input[type="checkbox"]:disabled + .filter__country-label {
+  color: @base-color-2;
+}
+
+.filter__country-input[type="checkbox"]:hover + .filter__country-label .filter__country-control,
+.filter__country-input[type="checkbox"]:focus-visible + .filter__country-label .filter__country-control {
+  background: rgba(120, 89, 207, 0.25);
+  border: 2px solid @primary-lighter;
+}
+
+.filter__country-input[type="checkbox"]:disabled + .filter__country-label .filter__country-control {
+  background-color: @primary-light;
+  border-color: @primary-light;
+
+  &::before {
+    background-color: @background-base;
+  }
+}
+
+.filter__country-input[type="checkbox"]:disabled.filter__country-input[type="checkbox"]:checked + .filter__country-label .filter__country-control {
+  background-color: @primary-light;
+  border-color: @primary-light;
+
+  &::before {
+    background-color: @base-color-2;
+  }
+}
+
+.filter__price-wrapper {
+  width: 280px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  position: relative;
+  gap: 42px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 8px;
+    height: 2px;
+    background-color: @base-color-2;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+  }
+
+  @media (min-width: @tablet-width) {
+    width: 223px;
+    column-gap: 48px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 318px;
+  }
+}
+
+.filter__price-value {
+  font-family: "Montserrat", "Arial", sans-serif;
+  display: block;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  padding: 9px 10px;
+  box-sizing: border-box;
+  width: 100%;
+  border: 2px solid @primary-lighter;
+  border-radius: 4px;
+  height: 40px;
+  text-align: center;
+
+  &:active {
+    color: #333333;
+  }
+
+  &:focus {
+    border-color: #593cac;
+    color: #333333;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    border: 2px solid #e2e2e2;
+  }
+}
+
+.filter__price {
+  margin-top: 31px;
+  margin-bottom: 34px;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 28px;
+  }
 }

@@ -4,6 +4,18 @@
   }
 }
 
+.cards__sort {
+  margin-bottom: 20px;
+
+  @media (min-width: @tablet-width) {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 4px;
+    margin-bottom: 29px;
+    gap: 17px;
+  }
+}
+
 .cards__sort-title {
   font-weight: 600;
   font-size: 16px;
@@ -17,6 +29,12 @@
   color: @base-primary-color;
   border: none;
   background-color: inherit;
+  width: 165px;
+
+  @media (min-width: @tablet-width) {
+    width: 157px;
+    letter-spacing: 0.04em;
+  }
 }
 
 .cards__list {
@@ -27,10 +45,16 @@
   flex-direction: column;
   row-gap: 20px;
   flex-wrap: wrap;
+  margin-bottom: 40px;
 
   @media (min-width: @tablet-width) {
     flex-direction: row;
     gap: 30px;
+    margin-bottom: 71px;
+  }
+
+  @media (min-width: @desktop-width) {
+    margin-bottom: 61px;
   }
 }
 
@@ -38,14 +62,22 @@
   background-color: @base-color;
   border-radius: 4px;
   padding: 20px;
+  padding-top: 40px;
   box-sizing: border-box;
+  width: 280px;
 
   @media (min-width: @tablet-width) {
     width: 349px;
+    padding: 30px;
+    padding-top: 50px;
   }
 
   @media (min-width: @desktop-width) {
     width: 317px;
+
+    &:nth-child(2) {
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    }
   }
 }
 
@@ -53,10 +85,13 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 32px;
+  margin: 0;
+  margin-bottom: 4px;
 
   @media (min-width: @tablet-width) {
     font-size: 24px;
     line-height: 36px;
+    margin-bottom: 10px;
   }
 }
 
@@ -73,6 +108,8 @@
   padding: 8px 20px 8px 46px;
   background-color: @base-primary-color;
   border-radius: 4px;
+  position: relative;
+  max-width: 141px;
 
   &:hover,
   &:focus {
@@ -86,9 +123,41 @@
   &:disabled {
     background-color: @base-color-2;
   }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 20px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    height: 16px;
+    background: url("../../img/catalog-basket.svg") no-repeat center;
+  }
 }
 
 .cards__price-wrapper {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cards__image {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 24px;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 32px;
+  }
+}
+
+.cards__item-description {
+  margin: 0;
+  margin-bottom: 16px;
+
+  @media (min-width: @tablet-width) {
+    margin-bottom: 18px;
+  }
 }

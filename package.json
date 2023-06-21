@@ -52,5 +52,9 @@
   "engines": {
     "node": ">=16.13.0"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "nouislider": "^15.7.1",
+    "swiper": "^9.4.1"
+  }
 }

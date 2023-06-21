@@ -1,0 +1,126 @@
+.swiper {
+  // width: 319px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  @media (min-width: @tablet-width) {
+    // width: 767px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: @desktop-width;
+  }
+}
+
+
+.swiper-button-next {
+  height: 714px;
+  width: 20px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+
+  &:active {
+    background: linear-gradient(90deg, rgba(120, 89, 207, 0.25) 0%, rgba(120, 89, 207, 0) 100%);
+  }
+
+  &:disabled {
+    background-color: @base-color-2;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 11px;
+    height: 20px;
+    background: url("../../img/arrow-next.svg") no-repeat center;
+    color: @base-primary-color;
+  }
+
+  @media (min-width: @tablet-width) {
+    width: 80px;
+
+    &::after {
+      top: 223px;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    &::after {
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  }
+}
+
+.swiper-button-prev {
+  height: 714px;
+  width: 20px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+
+  &:active {
+    background: linear-gradient(90deg, rgba(120, 89, 207, 0.25) 0%, rgba(120, 89, 207, 0) 100%);
+  }
+
+  &:disabled {
+    background-color: @base-color-2;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 11px;
+    height: 20px;
+    background: url("../../img/arrow-prev.svg") no-repeat center;
+    color: @base-primary-color;
+  }
+
+  @media (min-width: @tablet-width) {
+    width: 80px;
+
+    &::after {
+      top: 223px;
+    }
+  }
+
+  @media (min-width: @desktop-width) {
+    &::after {
+      top: 0;
+      bottom: 0;
+      margin: auto;
+    }
+  }
+}
+
+.swiper-pagination-bullet {
+  @media (min-width: @desktop-width) {
+    width: 62px;
+    border-radius: 0;
+    height: 4px;
+
+    &:hover,
+    &:focus {
+      background: rgba(120, 89, 207, 0.25);
+    }
+  }
+}
+
+.swiper-pagination-bullet-active {
+  background-color: @base-primary-color;
+}
+
+.swiper-slide-active {
+  width: 100%;
+}
+
+.swiper-pagination {
+  @media (min-width: @desktop-width) {
+    padding-bottom: 57px;
+  }
+}
