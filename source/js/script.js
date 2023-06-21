@@ -1,7 +1,7 @@
 
 const inputMin = document.querySelector('#price-min');
 const inputMax = document.querySelector('#price-max');
-const inputs = [inputMin, inputMax]
+const inputs = [inputMin, inputMax];
 
 //slider
 
@@ -39,14 +39,14 @@ if(rangeSlider) {
 
 rangeSlider.noUiSlider.on('update', (values, handle) => {
   inputs[handle].value =  Math.round(values[handle])
-})
+});
 
 const setRangeSlider = (i, value) => {
   let arr = [null, null];
   arr[i] = value;
 
   rangeSlider.noUiSlider.set(arr)
-}
+};
 
 inputs.forEach((el, index) => {
   el.addEventListener('change', (e) => {
@@ -54,7 +54,7 @@ inputs.forEach((el, index) => {
     setRangeSlider(index, e.currentTarget.value);
   });
 });
-}
+};
 
 //Карта
 
