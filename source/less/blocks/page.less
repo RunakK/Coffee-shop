@@ -14,3 +14,16 @@
   color: @base-color-3;
   background-color: @base-color;
 }
+
+.page__wrapper {
+  width: 280px;
+  margin: 0 auto;
+
+  @media (min-width: @tablet-width) {
+    width: 728px;
+  }
+
+  @media (min-width: @desktop-width) {
+    width: 1360px;
+  }
+}

@@ -141,7 +141,7 @@
     </section>
 
     <section class="features">
-      <div class="page-wrapper">
+      <div class="features__wrapper">
         <h2 class="features__title">Преимущества</h2>
         <p class="features__description">Главные причины выбрать Drink2Go</p>
         <ul class="features__list">
@@ -166,7 +166,7 @@
     </section>
 
     <section class="catalog">
-      <div class="page-wrapper">
+      <div class="catalog__container">
         <h2 class="catalog__title">каталог</h2>
         <p class="catalog__title-description">Каталог кофейных напитков</p>
         <div class="catalog__wrapper">
@@ -175,8 +175,10 @@
               <h2 class="filter__item-title">Цена</h2>
               <div class="filter__price" id="slider"></div>
               <div class="filter__price-wrapper">
-                <label class="filter__price-label" for="price-min"> <input type="number" class="filter__price-value" min="1" max="1000" id="price-min" name="price-min" placeholder="0"></label>
-                <label class="filter__price-label" for="price-max"><input type="number" class="filter__price-value" min="1" max="1000" id="price-max" name="price-max" placeholder="900"></label>
+                <label class="filter__price-label" for="price-min">
+                  <input type="number" class="filter__price-value" min="0" max="1000" id="price-min" name="price-min" placeholder="0"></label>
+                <label class="filter__price-label" for="price-max">
+                  <input type="number" class="filter__price-value" min="1" max="1000" id="price-max" name="price-max" placeholder="900"></label>
               </div>
             </div>
 
@@ -313,17 +315,24 @@
               </li>
             </ul>
             <ul class="catalog__pagination">
-              <li class="catalog__pagination-item"><a href="#" class="catalog__pagination-link catalog__pagination-link--back">
-                  <span class="catalog__pagination-first">Назад</span></a>
+              <li class="catalog__pagination-item catalog__pagination-item--first">
+                <a href="#" class="catalog__pagination-link catalog__pagination-link--back">
+                  <span class="catalog__pagination-first">Назад</span>
+                </a>
               </li>
-              <li class="catalog__pagination-item"><a href="#" class="catalog__pagination-link">1</a>
+              <li class="catalog__pagination-item">
+                <a href="#" class="catalog__pagination-link">1</a>
               </li>
-              <li class="catalog__pagination-item"><a href="#" class="catalog__pagination-link catalog__pagination-link--current">2</a>
+              <li class="catalog__pagination-item catalog__pagination-item--current">
+                <a href="#" class="catalog__pagination-link catalog__pagination-link--current">2</a>
               </li>
-              <li class="catalog__pagination-item"><a href="#" class="catalog__pagination-link">3</a>
+              <li class="catalog__pagination-item">
+                <a href="#" class="catalog__pagination-link">3</a>
               </li>
-              <li class="catalog__pagination-item"><a href="#" class="catalog__pagination-link catalog__pagination-link--forward">
-                  <span class="catalog__pagination-last">Вперёд</span></a>
+              <li class="catalog__pagination-item catalog__pagination-item--last">
+                <a href="#" class="catalog__pagination-link catalog__pagination-link--forward">
+                  <span class="catalog__pagination-last">Вперёд</span>
+                </a>
               </li>
             </ul>
           </section>
